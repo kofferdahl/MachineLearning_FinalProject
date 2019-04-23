@@ -1,8 +1,7 @@
-function [rf_img, bmode_img, scat_space, coords] = gen_lesion_img(contrast)
+function [rf_img, bmode_img, scat_space, coords] = gen_uniform_img();
 
 ax_img = 2/100; % axial range in cm
 lat_img = 2/100; % lateral range in cm
-addpath(genpath('field_tools'))
 current_dir = pwd;
 cd ..
 addpath(genpath('field_tools'))
@@ -34,43 +33,11 @@ scat_space=reshape(scat_space, scat_space_sz);
 
 
 %%
-
-lesionmagnitude=0;
-
-[m,n] = size(scat_space);
-X0=randi(m);
-Y0=randi(n);
-
-max_size_ax = round((1/100)/ax_spacing/2);
-min_size_ax = round((0.5/100)/ax_spacing/2);
-
-max_size_lat = round((1/100)/lat_spacing/2);
-min_size_lat = round((0.5/100)/lat_spacing/2);
-
-l=randi([min_size_ax, max_size_ax]);
-w=randi([min_size_lat, max_size_lat]);
-[X Y] = ndgrid(1:n,1:m); %make a meshgrid: use the size of your image instead
-coords = [X0, Y0, l, w];
-els = ((X-X0)/l).^2+((Y-Y0)/w).^2<=1; %Your Binary Mask which you multiply to your image, but make sure you change the size of your mesh-grid
-
-
-lesion_magnitude=(10^(contrast/20));
-
-
-scat_space(els) = scat_space(els).*lesion_magnitude;
-size(scat_space);
-
 tmp = conv2(scat_space, psf, 'same');
 %tmp = tmp(1:2500, :); % This cropping will need to be changed for different frequencies / image dimmensions!
 %coords(1) - coords(1)-98;
 
 rf_img=tmp/max(tmp(:)); % normalize rf image
 bmode_img = db(abs(hilbert(rf_img)));
-
-%subplot(1, 2, 1)
-%imagesc(scat_space)
-%subplot(1,2,2)
-%imagesc(bmode_img)
-%colormap gray
+coords = [0,0,0,0];
 end
-

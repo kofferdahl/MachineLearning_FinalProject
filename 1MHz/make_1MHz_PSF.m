@@ -26,5 +26,5 @@ Tx = makeTransducer(params, impulse, excitation);
 
 [psf, ax_psf, lat_psf] = makePSF(params, Tx, Tx);
 
-save psf_data.mat ax_psf lat_psf psf params
+save 1MHz_psf_data.mat ax_psf lat_psf psf params
 
