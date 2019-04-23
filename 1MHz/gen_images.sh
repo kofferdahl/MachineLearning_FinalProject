@@ -13,5 +13,5 @@
 
 ##cd /getlab/NETID/test
 
-matlab -nojvm -nodisplay -r "k=${SLURM_ARRAY_TASK_ID};gen_images(k, 50, 1, -3);"
-##matlab -nojvm -nodisplay -r "k=${SLURM_ARRAY_TASK_ID};gen_images(k, 50, 0, -3);"
+##matlab -nojvm -nodisplay -r "k=${SLURM_ARRAY_TASK_ID};gen_images(k, 50, 1, -3);"
+matlab -nojvm -nodisplay -r "k=${SLURM_ARRAY_TASK_ID};gen_images(k, 50, 0, -3);"

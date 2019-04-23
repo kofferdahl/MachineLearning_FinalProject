@@ -35,7 +35,6 @@ scat_space=reshape(scat_space, scat_space_sz);
 
 %%
 
-lesionmagnitude=0;
 
 [m,n] = size(scat_space);
 X0=randi(m);
@@ -64,7 +63,8 @@ tmp = conv2(scat_space, psf, 'same');
 %tmp = tmp(1:2500, :); % This cropping will need to be changed for different frequencies / image dimmensions!
 %coords(1) - coords(1)-98;
 
-rf_img=tmp/max(tmp(:)); % normalize rf image
+rf_img=tmp/max(tmp(:)); % normalize rf imagedir
+
 bmode_img = db(abs(hilbert(rf_img)));
 
 %subplot(1, 2, 1)

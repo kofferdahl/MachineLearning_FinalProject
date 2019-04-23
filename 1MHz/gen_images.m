@@ -6,7 +6,7 @@ for i = 1:batch_size
     if lesion_condition
         [rf_tmp, bmode_tmp, scat_space_tmp, coords_tmp] = gen_lesion_img(contrast);
     else
-        [rf_tmp, bmode_tmp, scat_space_tmp, coords_tmp] = gen_uniform_img();
+        [rf_tmp, bmode_tmp, scat_space_tmp, coords_tmp] = gen_lesion_img(0);
     end
     
     rf_img(:, :, i) = rf_tmp;
