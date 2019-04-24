@@ -4,7 +4,7 @@ params.fs = 15e6;
 set_sampling(params.fs);
 params.lambda = params.c/params.f0; % Wavelength [m]
 params.num_cyc = 2;
-params.BW = 0.5; % fractional bandwidth
+params.BW = 0.75; % fractional bandwidth
 params.num_elem = 192;
 
 params.pitch = params.lambda/2; % element pitch [m]

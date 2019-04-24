@@ -1,6 +1,6 @@
 params.f0 = 5e6; % Center frequency [Hz]
 params.c = 1540; % Speed of sound [m/s]
-params.fs = 3*params.f0;
+params.fs = 15e6;
 set_sampling(params.fs);
 params.lambda = params.c/params.f0; % Wavelength [m]
 params.num_cyc = 2;

@@ -18,10 +18,10 @@ end
 
 if lesion_condition
     
-    save([num2str(abs(contrast)), 'dB/Lesion_Images/set_', num2str(set_num), '_lesion_rf.mat'], 'rf_img', '-v7.3', '-nocompression')
-    save([num2str(abs(contrast)), 'dB/Lesion_Images/set_', num2str(set_num), '_lesion_bmode.mat'], 'bmode_img', '-v7.3', '-nocompression')
-    save([num2str(abs(contrast)), 'dB/Lesion_Images/set_', num2str(set_num), '_lesion_scat.mat'], 'scat_space', '-v7.3', '-nocompression')
-    save([num2str(abs(contrast)), 'dB/Lesion_Images/set_', num2str(set_num), '_lesion_coords.mat'], 'coords', '-v7.3', '-nocompression')
+    save([num2str(abs(contrast)), 'dB/Bonus_Lesion_Images/set_', num2str(set_num), '_lesion_rf.mat'], 'rf_img', '-v7.3', '-nocompression')
+    save([num2str(abs(contrast)), 'dB/Bonus_Lesion_Images/set_', num2str(set_num), '_lesion_bmode.mat'], 'bmode_img', '-v7.3', '-nocompression')
+    save([num2str(abs(contrast)), 'dB/Bonus_Lesion_Images/set_', num2str(set_num), '_lesion_scat.mat'], 'scat_space', '-v7.3', '-nocompression')
+    save([num2str(abs(contrast)), 'dB/Bonus_Lesion_Images/set_', num2str(set_num), '_lesion_coords.mat'], 'coords', '-v7.3', '-nocompression')
 else
         
     save([num2str(abs(contrast)), 'dB/Uniform_Images/set_', num2str(set_num), '_uniform_rf.mat'], 'rf_img', '-v7.3', '-nocompression')
